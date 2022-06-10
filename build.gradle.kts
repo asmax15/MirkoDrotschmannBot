@@ -41,6 +41,9 @@ dependencies {
     implementation(libs.jansi)
     implementation(libs.logback)
     implementation(libs.logging)
+
+    // MongoDB driver dependencies
+    implementation("org.mongodb", "mongo-java-driver", "3.12.10")
 }
 
 application {

@@ -6,22 +6,24 @@ package template
 import com.kotlindiscord.kord.extensions.ExtensibleBot
 import com.kotlindiscord.kord.extensions.utils.env
 import dev.kord.common.entity.Snowflake
-import template.extensions.TestExtension
+import template.extensions.HistoryExtension
+import template.mongo.MongoManager
 
-val TEST_SERVER_ID = Snowflake(
-    env("TEST_SERVER").toLong()  // Get the test server ID from the env vars or a .env file
+val SERVER_ID = Snowflake(
+    env("SERVER_ID").toLong()  // Get the test server ID from the env vars or a .env file
 )
 
 private val TOKEN = env("TOKEN")   // Get the bot' token from the env vars or a .env file
 
 suspend fun main() {
+    MongoManager.connect(env("MONGO_COLLECTION_NAME"))
     val bot = ExtensibleBot(TOKEN) {
         chatCommands {
-            defaultPrefix = "?"
+            defaultPrefix = "!"
             enabled = true
 
             prefix { default ->
-                if (guildId == TEST_SERVER_ID) {
+                if (guildId == SERVER_ID) {
                     // For the test server, we use ! as the command prefix
                     "!"
                 } else {
@@ -32,7 +34,7 @@ suspend fun main() {
         }
 
         extensions {
-            add(::TestExtension)
+            add(::HistoryExtension)
         }
     }
 

@@ -7,6 +7,7 @@ import com.kotlindiscord.kord.extensions.ExtensibleBot
 import com.kotlindiscord.kord.extensions.utils.env
 import dev.kord.common.entity.Snowflake
 import template.extensions.HistoryExtension
+import template.extensions.MirkoSearchExtension
 import template.mongo.MongoManager
 
 val SERVER_ID = Snowflake(
@@ -35,6 +36,7 @@ suspend fun main() {
 
         extensions {
             add(::HistoryExtension)
+            add(::MirkoSearchExtension)
         }
     }
 

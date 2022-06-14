@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.ir.backend.js.compile
 
 plugins {
     application
@@ -44,6 +45,12 @@ dependencies {
 
     // MongoDB driver dependencies
     implementation("org.mongodb", "mongo-java-driver", "3.12.10")
+
+    // YouTube Client API Library
+    implementation("com.google.apis:google-api-services-youtube:v3-rev20210915-1.32.1")
+
+    // Additional APIs
+    implementation("com.fasterxml.jackson.core", "jackson-databind", "2.0.1")
 }
 
 application {

@@ -12,7 +12,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = "template"
+rootProject.name = "mirko"
 
 enableFeaturePreview("VERSION_CATALOGS")
 

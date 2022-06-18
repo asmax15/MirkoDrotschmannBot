@@ -1,4 +1,4 @@
-package template.extensions
+package me.asmax.mirko.extensions
 
 import com.kotlindiscord.kord.extensions.extensions.Extension
 import com.kotlindiscord.kord.extensions.extensions.chatCommand
@@ -6,8 +6,8 @@ import com.kotlindiscord.kord.extensions.extensions.publicSlashCommand
 import com.kotlindiscord.kord.extensions.types.respond
 import com.kotlindiscord.kord.extensions.utils.respond
 import dev.kord.common.annotation.KordPreview
-import template.SERVER_ID
-import template.facts.FactManager
+import me.asmax.mirko.SERVER_ID
+import me.asmax.mirko.facts.FactManager
 
 @OptIn(KordPreview::class)
 class HistoryExtension : Extension() {

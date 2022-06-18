@@ -1,7 +1,7 @@
-package template.facts
+package me.asmax.mirko.facts
 
 import org.bson.Document
-import template.mongo.MongoManager
+import me.asmax.mirko.mongo.MongoManager
 
 object FactManager {
 

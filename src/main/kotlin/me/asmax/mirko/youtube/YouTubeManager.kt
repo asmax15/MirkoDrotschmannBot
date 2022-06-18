@@ -1,4 +1,4 @@
-package template.youtube
+package me.asmax.mirko.youtube
 
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport
 import com.google.api.client.http.HttpRequest

@@ -1,4 +1,4 @@
-package template.extensions
+package me.asmax.mirko.extensions
 
 import com.kotlindiscord.kord.extensions.commands.Arguments
 import com.kotlindiscord.kord.extensions.commands.converters.impl.coalescingDefaultingString
@@ -8,14 +8,14 @@ import com.kotlindiscord.kord.extensions.extensions.chatCommand
 import com.kotlindiscord.kord.extensions.extensions.publicSlashCommand
 import com.kotlindiscord.kord.extensions.types.respond
 import com.kotlindiscord.kord.extensions.utils.respond
-import template.SERVER_ID
-import template.youtube.YouTubeManager
+import me.asmax.mirko.SERVER_ID
+import me.asmax.mirko.youtube.YouTubeManager
 
 class MirkoSearchExtension : Extension() {
     override val name: String = "mirkosearch"
 
     override suspend fun setup() {
-        chatCommand(::SearchArgs) {
+        chatCommand(MirkoSearchExtension::SearchArgs) {
             name = "mirkosearch"
             description = "Frage Mirko Drotschmann nach einem Video von ihm."
 
@@ -28,7 +28,7 @@ class MirkoSearchExtension : Extension() {
             }
         }
 
-        publicSlashCommand(::SearchSlashArgs) {
+        publicSlashCommand(MirkoSearchExtension::SearchSlashArgs) {
             name = "mirkosearch"
             description = "Frage Mirko Drotschmann nach einem Video von ihm."
 

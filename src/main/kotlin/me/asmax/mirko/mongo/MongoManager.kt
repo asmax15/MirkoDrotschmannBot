@@ -1,4 +1,4 @@
-package template.mongo
+package me.asmax.mirko.mongo
 
 import com.kotlindiscord.kord.extensions.utils.env
 import com.mongodb.MongoClient
